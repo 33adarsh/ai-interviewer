@@ -22,7 +22,7 @@ const Interview = () => {
         const fetchReport = async () => {
             try {
                 const token = localStorage.getItem('token') // apne token storage ke hisaab se change karo
-                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'}/api/interview/${interviewId}`, {
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'https://ai-interviewer-l31o.onrender.com'}/api/interview/${interviewId}`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -50,7 +50,7 @@ const Interview = () => {
         try {
             setIsDownloading(true)
             const token = localStorage.getItem('token')
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'}/api/interview/resume-pdf/${id}`, {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'https://ai-interviewer-l31o.onrender.com'}/api/interview/resume-pdf/${id}`, {
                 headers: {
                     Authorization: `Bearer ${token}`
                 }

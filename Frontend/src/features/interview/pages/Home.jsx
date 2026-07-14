@@ -25,7 +25,7 @@ const Home = () => {
             try {
                 const token = localStorage.getItem('token')
                 if (!token) return
-                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'}/api/interview/`, {
+                const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'https://ai-interviewer-l31o.onrender.com'}/api/interview/`, {
                     headers: {
                         Authorization: `Bearer ${token}`
                     }
@@ -70,7 +70,7 @@ const Home = () => {
         try {
             setIsGenerating(true)
             const token = localStorage.getItem('token') // ya jaha bhi token store hota hai
-            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'http://localhost:3000'}/api/interview/`, {
+            const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || 'https://ai-interviewer-l31o.onrender.com'}/api/interview/`, {
                 method: 'POST',
                 headers: {
                     Authorization: `Bearer ${token}`
