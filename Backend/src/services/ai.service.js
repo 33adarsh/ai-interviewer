@@ -91,7 +91,7 @@ async function generateInterviewReport({ resume, selfDescription, jobDescription
         }
     })
 
-    console.log("RAW AI RESPONSE:", response.text)
+
 
     return JSON.parse(response.text)
 }
