@@ -1,0 +1,133 @@
+# ==============================================================================
+# Full-Stack AI Interviewer Project - .gitignore
+# ==============================================================================
+
+# ------------------------------------------------------------------------------
+# 1. Dependencies
+# ------------------------------------------------------------------------------
+# Ignored because these are generated from package.json and package-lock.json
+node_modules/
+.pnp
+.pnp.js
+
+# ------------------------------------------------------------------------------
+# 2. Environment Variables & Secrets (CRITICAL)
+# ------------------------------------------------------------------------------
+# NEVER COMMIT THESE! They contain sensitive API keys (OpenAI, etc.), 
+# MySQL database credentials, JWT secrets, and port configurations.
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.env.*
+!.env.example # Allow tracking of a template/example env file
+
+# ------------------------------------------------------------------------------
+# 3. Build & Compiled Outputs
+# ------------------------------------------------------------------------------
+# Ignored because these are generated from source code during the build process
+dist/
+dist-ssr/
+build/
+out/
+
+# ------------------------------------------------------------------------------
+# 4. Logs
+# ------------------------------------------------------------------------------
+# Ignore application logs and package manager debug logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# ------------------------------------------------------------------------------
+# 5. Caches & Temporary Folders
+# ------------------------------------------------------------------------------
+# Ignored to prevent committing local dev server caches and linting caches
+.cache/
+.eslintcache
+.parcel-cache/
+.npm/
+.vite/
+
+# ------------------------------------------------------------------------------
+# 6. File Uploads & Generated Temporary Files (Multer / AI)
+# ------------------------------------------------------------------------------
+# Directories where Multer might store temporary user audio/video uploads
+uploads/
+tmp/
+temp/
+Backend/public/uploads/
+
+# Specific generated file types from the AI (transcripts, audio, TTS, resumes)
+*.pdf
+*.mp3
+*.wav
+*.m4a
+*.png
+*.jpg
+*.jpeg
+*.gif
+*.webp
+
+# Allow tracking of explicitly required static assets in the public folder
+!public/
+!public/vite.svg
+!public/favicon.ico
+!Frontend/public/
+
+# ------------------------------------------------------------------------------
+# 7. OS & System Files
+# ------------------------------------------------------------------------------
+# Hidden system files that OSs generate automatically inside folders
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# ------------------------------------------------------------------------------
+# 8. Editor & IDE Files
+# ------------------------------------------------------------------------------
+# Ignore personal workspace settings for IDEs
+.vscode/*
+!.vscode/settings.json   # Recommended: Track shared team workspace settings
+!.vscode/tasks.json      # Recommended: Track shared build tasks
+!.vscode/launch.json     # Recommended: Track shared debug configurations
+!.vscode/extensions.json # Recommended: Track recommended extensions
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ------------------------------------------------------------------------------
+# 9. Testing & Coverage Outputs
+# ------------------------------------------------------------------------------
+# Ignore test runner coverage reports
+coverage/
+.nyc_output/
+
+# ------------------------------------------------------------------------------
+# 10. Database (Optional SQLite fallbacks)
+# ------------------------------------------------------------------------------
+# Exclude local database files if you ever mock MySQL with SQLite locally
+*.db
+*.sqlite
+*.sqlite3
+
+# ==============================================================================
+# DO NOT IGNORE (Implicitly tracked)
+# - Source code (src/, components/, controllers/, etc.)
+# - Package manifest & lockfiles (package.json, package-lock.json)
+# - Database migrations (e.g., prisma/schema.prisma, SQL migrations)
+# - Configuration files (tailwind.config.js, vite.config.js, tsconfig.json)
+# ==============================================================================

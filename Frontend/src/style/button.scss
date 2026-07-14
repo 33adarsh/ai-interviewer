@@ -1,0 +1,74 @@
+
+
+
+.button {
+    border: none;
+    outline: none;
+    padding-inline: 1.5rem;
+    padding-block: 0.75rem;
+    border-radius: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+
+    &.primary-button {
+        background-color: #378a5a;
+        color: white;
+    }
+
+    &:active {
+        transform: scale(0.9);
+    }
+
+    &.has-loading-state {
+        display: grid;
+        place-items: center;
+        
+        .btn-content, .btn-loading-content {
+            grid-column: 1;
+            grid-row: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .btn-loading-content {
+            opacity: 0;
+            visibility: hidden;
+            gap: 0.5rem;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: #fff;
+            animation: button-spin 1s linear infinite;
+        }
+
+        &.is-loading {
+            opacity: 0.8;
+            cursor: not-allowed;
+            
+            &:active {
+                transform: none;
+            }
+
+            .btn-content {
+                opacity: 0;
+                visibility: hidden;
+            }
+
+            .btn-loading-content {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+    }
+}
+
+@keyframes button-spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
